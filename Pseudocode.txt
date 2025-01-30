@@ -1,0 +1,171 @@
+START
+
+    Initialize userData array (username, password) and other necessary variables (userCount, arrProIn, arrProOut, available).
+    
+    FUNCTION mainMenu:
+        Display main menu options (Login, Register, Exit)
+        IF user selects "Login":
+            CALL login()
+        ELSE IF user selects "Register":
+            CALL register()
+        ELSE IF user selects "Exit":
+            EXIT program
+        END IF
+    END FUNCTION
+
+    FUNCTION login:
+        Prompt user for username and password
+        IF username and password match any entry in userData:
+            RETURN true
+        ELSE:
+            RETURN false
+        END IF
+    END FUNCTION
+
+    FUNCTION register:
+        Prompt user for username and password
+        IF username already exists:
+            Display error "Username already exists"
+        ELSE IF there is space in userData:
+            Add username and password to userData and increment userCount
+        ELSE:
+            Display error "Registration failed, data has been fully"
+        END IF
+    END FUNCTION
+
+    FUNCTION inbound:
+        Prompt user for product code and validate input
+        Search product in available list:
+            IF found:
+                Display product details (name, qty, price)
+                Prompt user for new quantity
+                Update stock quantity
+                IF stock is updated successfully:
+                    Display success message
+            ELSE:
+                Prompt user for new product details (name, qty, price)
+                Add new product to available stock and product inbound list
+                Display success message
+        END IF
+    END FUNCTION
+
+    FUNCTION outbound:
+        Prompt user for product code and validate input
+        Search product in available list:
+            IF found:
+                Display product details (name, qty, price)
+                Prompt user for quantity to deduct
+                IF quantity is greater than available stock:
+                    Display error "Not enough stock available"
+                ELSE:
+                    Deduct quantity from stock
+                    IF stock qty becomes 0:
+                        Remove product from available list
+                        Display "Product is out of stock"
+                    ELSE:
+                        Add outbound product record to arrProOut
+                        Display success message
+            ELSE:
+                Display error "Product not found"
+        END IF
+    END FUNCTION
+
+    FUNCTION showInList:
+        IF arrProIn is empty:
+            Display "No product in the inbound list"
+        ELSE:
+            Display all products in the inbound list with details (code, name, qty, price)
+        END IF
+    END FUNCTION
+
+    FUNCTION showOutList:
+        IF arrProOut is empty:
+            Display "No product in the outbound list"
+        ELSE:
+            Display all products in the outbound list with details (code, name, qty, price)
+        END IF
+    END FUNCTION
+
+    FUNCTION showStock:
+        IF available list is empty:
+            Display "No product in stock"
+        ELSE:
+            Display all products in available stock with details (code, name, qty, price)
+        END IF
+    END FUNCTION
+
+    FUNCTION adjust:
+        Prompt user for product code to adjust
+        Search product in available list:
+            IF found:
+                Display current product details (code, name, qty, price)
+                Prompt user for adjustment options (Code, Name, Qty, Price)
+                Update selected attribute and display success message
+        END IF
+    END FUNCTION
+
+    FUNCTION searchPro:
+        Prompt user for product code to search
+        Search product in available list:
+            IF found:
+                Display product details (code, name, qty, price)
+            ELSE:
+                Display "Product not found"
+        END IF
+    END FUNCTION
+
+    FUNCTION othMenu:
+        Display additional menu options (Sorting, Searching, Exit)
+        IF user selects "Sorting":
+            CALL sorting()
+        ELSE IF user selects "Searching":
+            CALL searchCode()
+        ELSE IF user selects "Exit":
+            Exit menu
+        END IF
+    END FUNCTION
+
+    FUNCTION sorting:
+        Prompt user for sorting criteria (Code, Qty, Price)
+        IF user selects "Code":
+            CALL sortCode()
+        ELSE IF user selects "Qty":
+            CALL sortQty()
+        ELSE IF user selects "Price":
+            CALL sortPrice()
+        END IF
+    END FUNCTION
+
+    FUNCTION sortCode:
+        Sort available list by product code
+        Display sorted list of products
+    END FUNCTION
+
+    FUNCTION sortQty:
+        Sort available list by quantity
+        Display sorted list of products
+    END FUNCTION
+
+    FUNCTION sortPrice:
+        Sort available list by price
+        Display sorted list of products
+    END FUNCTION
+
+    FUNCTION searchCode:
+        Prompt user for product code to search
+        CALL binarySearchCode() to find product in available list
+        IF found:
+            Display product details
+        ELSE:
+            Display "Product not found"
+    END FUNCTION
+
+    FUNCTION binarySearchCode:
+        Perform binary search on available list to find product by code
+        IF found:
+            RETURN index of product
+        ELSE:
+            RETURN -1
+    END FUNCTION
+
+END
