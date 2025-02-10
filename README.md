@@ -6,13 +6,13 @@ Program yang saya buat adalah program Aplikasi Warehouse Management System denga
 
 Aplikasi BRILIam menyediakan fitur login dan registrasi, yang berfungsi sebagai akses masuk user sebelum memasuki program.
 1. Login :
-   ![Screenshot 2025-02-09 210801](https://github.com/user-attachments/assets/2d097183-36be-459b-a416-9545561ad20e)
+![Screenshot 2025-02-09 210801](https://github.com/user-attachments/assets/2d097183-36be-459b-a416-9545561ad20e)
 2. registrasi :
-   ![Screenshot 2025-02-09 210946](https://github.com/user-attachments/assets/9df3841e-2898-41db-b887-f49b0b49c45a)
+![Screenshot 2025-02-09 210946](https://github.com/user-attachments/assets/9df3841e-2898-41db-b887-f49b0b49c45a)
 
 
 Fitur - fitur di dalam Aplikasi BRILIam
-=> ![Screenshot 2025-02-09 211443](https://github.com/user-attachments/assets/cafdfc2d-64e2-4bb5-953e-fe1ce143ca65)
+![Screenshot 2025-02-09 211443](https://github.com/user-attachments/assets/cafdfc2d-64e2-4bb5-953e-fe1ce143ca65)
 
 
 Didalam Aplikasi BRILIam terdapat beberapa menu antaranya lain menu Inbound, Outbound, Inbound List, Outbound List, Stock Report, Adjustment Stock, Search Product, dan Other Menu.
